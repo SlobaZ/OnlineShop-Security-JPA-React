@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { HashRouter,Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import logo from './logo.jpg';
@@ -101,7 +101,7 @@ class App extends Component {
                 </Link>
               </li>
               <li className="nav-item mr-1">
-                <a href="/login" className="nav-link" onClick={this.logOut}>
+                <a href="/" className="nav-link" onClick={this.logOut}>
                   LogOut
                 </a>
               </li>
@@ -123,21 +123,23 @@ class App extends Component {
           )}
         </nav>
 
-        <div className="container mt-3">
+       <div className="container mt-3">
+		<HashRouter>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/proizvodi" component={ListProizvodiComponent} />" +
             <Route exact path="/addorupdate-proizvod/:id" component={CreateProizvodComponent} />
             <Route exact path="/users" component={ListUsersComponent} />
 	          <Route exact path="/update-user/:id" component={CreateUserComponent} />
-			      <Route exact path="/kupovine" component={ListKupovineComponent} />
+			  <Route exact path="/kupovine" component={ListKupovineComponent} />
 	          <Route exact path="/update-kupovina/:id" component={CreateKupovinaComponent} />
-			      <Route exact path="/kupi" component={KreirajKupovinuComponent} />
+			  <Route exact path="/kupi" component={KreirajKupovinuComponent} />
             <Route exact path="/zapocnikupovinu/:id" component={ListStavkeComponent} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
           </Switch>
+		</HashRouter>
         </div>
       </div>
     );
