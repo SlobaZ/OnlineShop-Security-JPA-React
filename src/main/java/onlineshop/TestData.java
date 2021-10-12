@@ -58,19 +58,19 @@ public class TestData {
 		User user1 = new User();
 		user1.setUsername("Admin");
 		user1.setEmail("admin@gmail.com");
-		user1.setPassword("$2a$10$hKDVYxLefVHV/vtuPhWD3OigtRyOykRLDdUAp80Z1crSoS1lFqaFS"); 
+		user1.setPassword("$2a$10$hKDVYxLefVHV/vtuPhWD3OigtRyOykRLDdUAp80Z1crSoS1lFqaFS");     // admin
 		user1 = userRepository.save(user1);
 
 		User user2 = new User();
 		user2.setUsername("VasaVasic");
 		user2.setEmail("vasa@gmail.com");
-		user2.setPassword("$2a$10$bwQVsArIQJtmkPckmfRZGOEMAGBXcHaziXIEgstc9ePsPG6sYEFK.");
+		user2.setPassword("$2a$10$bwQVsArIQJtmkPckmfRZGOEMAGBXcHaziXIEgstc9ePsPG6sYEFK.");     // 654321
 		user2 = userRepository.save(user2);
 		
 		User user3 = new User();
 		user3.setUsername("PeraPeric");
 		user3.setEmail("pera@gmail.com");
-		user3.setPassword("$2a$10$Locf9fRBO84ejEc/bQFEROChVsd2ixjv4M2kYX6KSLp74iacK.N3W");
+		user3.setPassword("$2a$10$Locf9fRBO84ejEc/bQFEROChVsd2ixjv4M2kYX6KSLp74iacK.N3W");     // 123456
 		user3 = userRepository.save(user3);
 		
 	
