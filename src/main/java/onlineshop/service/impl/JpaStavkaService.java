@@ -59,18 +59,13 @@ public class JpaStavkaService implements StavkaService {
 		return stavkaRepository.findByIdKupovine(kupovinaId);
 	}
 
+
 	@Override
 	public Stavka kupiStavku(Integer id, int kolicinastavke) {
 		Stavka stavka = stavkaRepository.getOne(id);
 		Proizvod proizvod = stavka.getProizvod();
-		Kupovina kupovina = stavka.getKupovina();
-		List<Stavka> stavke = stavkaRepository.findByIdKupovine(kupovina.getId());
-		Double	x = 0.0 ;
-		for (Stavka s: stavke) {
-			x += s.getCenastavke();
-		  }
-		
-		if( proizvod.getKolicina()- kolicinastavke >= 0   &&  proizvod.getKolicina() >= kolicinastavke ) {
+
+		if( proizvod.getKolicina()- kolicinastavke >= 0   &&  proizvod.getKolicina() >= kolicinastavke  &&  kolicinastavke > 0 ) {
 			
 			proizvod.setKolicina( proizvod.getKolicina() - kolicinastavke ); 
 			stavka.setKolicinastavke(stavka.getKolicinastavke() + kolicinastavke);
@@ -85,6 +80,8 @@ public class JpaStavkaService implements StavkaService {
 		
 		return stavka;
 	}
+
+	
 
 	@Override
 	public Stavka resetujStavku(Integer id) {
