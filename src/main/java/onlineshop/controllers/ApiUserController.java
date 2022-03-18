@@ -31,7 +31,7 @@ import onlineshop.support.UserToUserDTO;
 
 
 
-//@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="http://localhost:3000")
 @RestController
 @RequestMapping(value="/api/users")
 public class ApiUserController {

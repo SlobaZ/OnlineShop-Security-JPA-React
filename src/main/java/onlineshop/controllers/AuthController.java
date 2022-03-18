@@ -32,7 +32,7 @@ import onlineshop.repository.UserRepository;
 import onlineshop.security.jwt.JwtUtils;
 import onlineshop.security.services.UserDetailsImpl;
 
-//@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/auth")
 public class AuthController {

@@ -34,7 +34,7 @@ import onlineshop.utils.DodeliKategoriju;
 import onlineshop.dto.ProizvodDTO;
 
 
-//@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="http://localhost:3000")
 @RestController
 @RequestMapping(value="/api/proizvodi")
 public class ApiProizvodController {

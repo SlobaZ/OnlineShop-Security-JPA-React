@@ -18,6 +18,7 @@ import ListKupovineComponent from "./components/kupovine/ListKupovineComponent.j
 import CreateKupovinaComponent from "./components/kupovine/CreateKupovinaComponent.jsx";
 import KreirajKupovinuComponent from "./components/stavke/KreirajKupovinuComponent.jsx"
 import ListStavkeComponent from "./components/stavke/ListStavkeComponent.jsx";
+import RezultatKupovineComponent from "./components/stavke/RezultatKupovineComponent.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -127,7 +128,7 @@ class App extends Component {
 		<HashRouter>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/proizvodi" component={ListProizvodiComponent} />" +
+            <Route exact path="/proizvodi" component={ListProizvodiComponent} />
             <Route exact path="/addorupdate-proizvod/:id" component={CreateProizvodComponent} />
             <Route exact path="/users" component={ListUsersComponent} />
 	          <Route exact path="/update-user/:id" component={CreateUserComponent} />
@@ -135,6 +136,7 @@ class App extends Component {
 	          <Route exact path="/update-kupovina/:id" component={CreateKupovinaComponent} />
 			  <Route exact path="/kupi" component={KreirajKupovinuComponent} />
             <Route exact path="/zapocnikupovinu/:id" component={ListStavkeComponent} />
+            <Route exact path="/rezultatkupovine/:id" component={RezultatKupovineComponent} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />

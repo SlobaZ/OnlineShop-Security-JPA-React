@@ -69,6 +69,30 @@ label {
   width: 300px;
 }
 
+.tabelarezultatkupovina{
+  font-size: 26px;
+  border: 1px solid black;
+}
+.tabelarezultatkupovina tr td{
+  width: 250px;
+  border: 1px solid black;
+  padding-left:10px;
+}
+
+.tabelarezultatkupovinastavke{
+  font-size: 22px;
+  border: 1px solid black;
+}
+.tabelarezultatkupovinastavke th{
+  border: 1px solid black;
+  padding-left:10px;
+}
+.tabelarezultatkupovinastavke tr td{
+  width: 190px;
+  border: 1px solid black;
+  padding-left:10px;
+}
+
 .tabelazaprofil{
   font-size: 18px;
 }

@@ -8,8 +8,9 @@ class ListStavkeComponent extends Component {
 
         this.state = {
             id: this.props.match.params.id,
-                stavke: [],
-		kolicinastavke: ''
+			kupovina: {},
+            stavke: [],
+            kolicinastavke: ''
         };
         
         this.changeKolicinastavkeHandler = this.changeKolicinastavkeHandler.bind(this);
@@ -32,10 +33,10 @@ class ListStavkeComponent extends Component {
         });
     }
 
-    kupi(){
-        KupovineService.kupi(this.state.id).then( res => {
+    kupi(id){
+        KupovineService.kupi(id).then( res => {
         });
-        this.props.history.push('/');
+        this.props.history.push(`/rezultatkupovine/${id}`);
     }
 
     componentDidMount(){
@@ -43,6 +44,9 @@ class ListStavkeComponent extends Component {
     }
 
     refreshStavke() {
+		KupovineService.getKupovinaById(this.state.id).then((response) => {
+            this.setState({ kupovina: response.data });
+          });
         StavkeService.getAllsByKupovinaId(this.state.id).then((response) => {
           this.setState({ stavke: response.data });
         });
@@ -50,6 +54,7 @@ class ListStavkeComponent extends Component {
 
 
     render() {
+	const { kupovina } = this.state;
         return (
             <div>
                 <br></br>
@@ -102,10 +107,10 @@ class ListStavkeComponent extends Component {
 											<td></td>
 											<td></td>
 											<td></td>
-											<td><button onClick={ () => this.kupi()} className="btn btn-danger">Kupi</button></td>
+											<td><button onClick={ () => this.kupi(kupovina.id)} className="btn btn-danger">Kupi</button></td>
 											<td></td>
 											<td></td>
-										</tr>
+								</tr>
                             </tbody>
                         </table>
  					</form>
